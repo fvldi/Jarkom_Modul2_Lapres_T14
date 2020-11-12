@@ -152,6 +152,8 @@ zone "semerut14.pw" {
 
 #### MOJOKERTO
 - Edit ```nano /etc/bind/named.conf.options```
+![img](/img/6d.png)
+
 - Comment kan ```//dnimgec-validation auto;```
 - Tambahkan ```allow-query{any;};```
 
@@ -168,21 +170,21 @@ zone "semerut14.pw" {
 - Buat direktori delegasi ```mkdir /etc/bind/delegasi```
 - Copykan db.local ke dalam gunung.semeru.t14.pw ```cp /etc/bind/db.local /etc/bind/delegasi/gunung.semerut14.pw```
 - Edit ```nano /etc/bind/delegasi/gunung.semerut14.pw``` menjadi seperti gambar di bawah
-![img](/img/6-3.png)
+![img]
 - Kemudian restart bind9 dengan perintah ```service bind9 restart```
 
 - Lakukan testing ```ping gunung.semerut14.pw```
-![img](/img/6-4.png)
+![img](/6f.png)
 </br></br></br>
 
 ## Soal No 7
 ### subdomain dengan nama http://naik.gunung.semerut14.pw, domain ini diarahkan ke IP Server PROBOLINGGO. Setelah selesai membuat keseluruhan domain, kamu diminta untuk segera mengatur web server.
 - Pada MOJOKERTO edit ```nano /etc/bind/delegasi/gunung.semerut14.pw``` dan tambahkan 
 	```naik	IN	A	10.151.77.164```
-![img](/img/7-1.png)
+![img](/img/7a.png)
 - Kemudian restart bind9 dengan perintah ```service bind9 restart```
 
 - Lakukan testing ```ping naik.gunung.semerut14.pw```
-![img](/img/7.png)
+![img](/img/7b.png)
 </br></br></br>
 
