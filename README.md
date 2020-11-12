@@ -22,7 +22,7 @@ zone "semerut14.pw" {
 - Buat folder ```jarkom``` pada direktori ```/etc/bind``` : ```mkdir /etc/bind/jarkom```
 - Salin file ```db.local``` pada ```/etc/bind``` ke dalam  folder jarkom dengan perintah: ```cp /etc/bind/db.local /etc/bind/jarkom/semerut14.pw```
 - Buka dan edit file semerut14.pw dengan perintah ```nano /etc/bind/jarkom/semerut14.pw```
-    ![img](./img/1a.png)
+    ![img](/img/1a.png)
     
 - Kemudian restart bind9 dengan perintah ```service bind9 restart```
 - Pada client GRESIK dan SIDOARJO arahkan nameserver menuju IP MALANG dengan mengedit file resolve.conf dengan perintah ```nano /etc/resolv.conf```
@@ -63,11 +63,10 @@ penanajakan	IN	A	10.151.77.164	; IP PROBOLINGGO
 ![img](/img/3a.png)
 
 - edit ```nano /etc/bind/named.conf.local```
-![img](/img/3-2.png)
 
 - Kemudian restart bind9 dengan perintah ```service bind9 restart```
 - Kemudian pada client GRESIK lakukan testing ```ping penanjakan.semerut14.pw```
-![img](/img/3-ping.png)
+![img](/img/3b.png)
 </br></br></br>
 
 ## Soal No 4
@@ -79,17 +78,17 @@ zone "77.151.10.in-addr.arpa" {
     file "/etc/bind/jarkom/77.151.10.in-addr.arpa";
 };
 ```
-![img](/img/4-1.png)
+![img](/img/4a.png)
 
 
 - copykan file db.local ke dalam file 77.151.10.in-addr.arpa pada folder jarkom dengan perintah ```cp /etc/bind/db.local /etc/bind/jarkom/77.151.10.in-addr.arpa```
 - ```77.151.10``` merupakan 3 byte pertama IP MALANG yang di-reverse urutannya
 - Kemudian edit file dengan ```nano /etc/bind/jarkom/77.151.10.in-addr.arpa```
-![img](/img/4-2.png)
+![img](/img/4b.png)
 
 - Kemudian restart bind9 dengan perintah ```service bind9 restart```
 - Untuk mengecek konfigurasi dapat melakukan perintah ```host -t PTR 10.151.77.106``` pada client GRESIK
-![img](/img/4-ping.png)
+![img](/img/4c.png)
 </br></br></br>
 
 ## Soal No 5
@@ -104,21 +103,21 @@ zone "semerut14.pw" {
     file "/etc/bind/jarkom/semerut14.pw";
 };
 ```
-![img](/img/5-1.png)
+![img](/img/5a.png)
 
 - Kemudian restart bind9 dengan perintah ```service bind9 restart```
 - Buka MOJOKERTO dan update package lists dengan menjalankan command: ```apt-get update```
 - Kemudian install aplikasi bind9 pada MOJOKERTO ```apt-get install bind9 -y```
 - Edit file pada MOJOKERTO ```nano /etc/bind/named.conf.local```
-![img](/img/5-2.png)
+![img](/img/5b.png)
 
 - Kemudian restart bind9 pada MOJOKERTO dengan perintah ```service bind9 restart```
 - Pada sever MALANG matikan service bind9 ```service bind9 stop```
 - Pada client GRESIK atur nameserver mengarah ke IP MALANG dan MOJOKERTO ```nano /etc/resolv.conf```
-![img](/img/5-3.png)
+![img](/img/5c.png)
 
 - Lakukan ```ping semerut14.pw``` pada client GRESIK
-![img](/img/5-ping.png)
+![img](/img/5d.png)
 </br></br></br>
 
 ## Soal No 6
@@ -130,9 +129,11 @@ zone "semerut14.pw" {
 gunung	IN	A	10.151.77.164	; IP PROBOLINGGO
 naik	IN	NS	gunung
 ```
-![img](/img/6-1.png)
+![img](/img/6a.png)
 
 - Edit ```nano /etc/bind/named.conf.options```
+![img](/img/6b.png)
+
 - Comment kan ```dnimgec-validation auto;``` menjadi ```//dnimgec-validation auto;```
 - Tambahkan ```allow-query{any;};```
 
@@ -146,7 +147,7 @@ zone "semerut14.pw" {
     file "/etc/bind/jarkom/semerut14.pw";
 };
 ```
-![img](/img/6.png)
+![img](/img/6c.png)
 - Kemudian restart bind9 dengan perintah ```service bind9 restart```
 
 #### MOJOKERTO
@@ -162,7 +163,7 @@ zone "semerut14.pw" {
     file "/var/lib/bind/gunung.semerut14.pw";
 };
 ```
-![img](/img/6-2.png)
+![img](/img/6e.png)
 
 - Buat direktori delegasi ```mkdir /etc/bind/delegasi```
 - Copykan db.local ke dalam gunung.semeru.t14.pw ```cp /etc/bind/db.local /etc/bind/delegasi/gunung.semerut14.pw```
