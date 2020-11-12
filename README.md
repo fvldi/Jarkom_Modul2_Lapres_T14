@@ -22,7 +22,7 @@ zone "semerut14.pw" {
 - Buat folder ```jarkom``` pada direktori ```/etc/bind``` : ```mkdir /etc/bind/jarkom```
 - Salin file ```db.local``` pada ```/etc/bind``` ke dalam  folder jarkom dengan perintah: ```cp /etc/bind/db.local /etc/bind/jarkom/semerut14.pw```
 - Buka dan edit file semerut14.pw dengan perintah ```nano /etc/bind/jarkom/semerut14.pw```
-    ![img](/img/1a.png)
+    ![img](./img/1a.png)
     
 - Kemudian restart bind9 dengan perintah ```service bind9 restart```
 - Pada client GRESIK dan SIDOARJO arahkan nameserver menuju IP MALANG dengan mengedit file resolve.conf dengan perintah ```nano /etc/resolv.conf```
