@@ -61,14 +61,14 @@ www	IN	CNAME	semerut14.pw.
 - edit file semeru.pw pada MALANG ```nano /etc/bind/jarkom/semerut14.pw```
 
 ```
-@	IN	A	10.151.77.164	; IP PROBOLINGGO
-www	IN	CNAME	semerut14.pw.
+@		IN	A	10.151.77.164	; IP PROBOLINGGO
+www		IN	CNAME	semerut14.pw.
 penanajakan	IN	A	10.151.77.164	; IP PROBOLINGGO
 ```
 
 ![img](https://raw.githubusercontent.com/fvldi/Jarkom_Modul2_Lapres_T14/main/img/3a.PNG)
 
-- edit ```nano /etc/bind/named.conf.local```\
+- edit ```nano /etc/bind/named.conf.local```
 - Kemudian restart bind9 dengan perintah ```service bind9 restart```
 - Kemudian pada client GRESIK lakukan testing ```ping penanjakan.semerut14.pw```
 
@@ -124,7 +124,7 @@ zone "semerut14.pw" {
 
 - Kemudian restart bind9 pada MOJOKERTO dengan perintah ```service bind9 restart```
 - Pada sever MALANG matikan service bind9 ```service bind9 stop```
-- Pada client GRESIK atur nameserver mengarah ke IP MALANG dan MOJOKERTO ```nano /etc/resolv conf```
+- Pada client GRESIK atur nameserver mengarah ke IP MALANG dan MOJOKERTO ```nano /etc/resolv.conf```
 
 ![img](https://raw.githubusercontent.com/fvldi/Jarkom_Modul2_Lapres_T14/main/img/5c.PNG)
 
@@ -187,6 +187,7 @@ zone "semerut14.pw" {
 - Buat direktori delegasi ```mkdir /etc/bind/delegasi```
 - Copykan db.local ke dalam gunung.semeru.t14.pw ```cp /etc/bind/db.local /etc/bind/delegasi/gunung.semerut14.pw```
 - Edit ```nano /etc/bind/delegasi/gunung.semerut14.pw``` menjadi seperti gambar di bawah
+![img](https://raw.githubusercontent.com/fvldi/Jarkom_Modul2_Lapres_T14/main/img/7a.PNG)
 - Kemudian restart bind9 dengan perintah ```service bind9 restart```
 - Lakukan testing ```ping gunung.semerut14.pw```
 
