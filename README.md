@@ -44,7 +44,6 @@ nameserver 10.151.77.162     #IP MALANG
 
 ## Soal No 2
 ### alias http://www.semerut14.pw
-- Menambahkan konfigurasi pada server MALANG di dalam dile semerut14.pw ```nano /etc/bind/jarkom/semerut14.pw```
 
 ```
 www	IN	CNAME	semerut14.pw.
@@ -96,7 +95,7 @@ zone "77.151.10.in-addr.arpa" {
 ![img](https://raw.githubusercontent.com/fvldi/Jarkom_Modul2_Lapres_T14/main/img/4b.PNG)
 
 - Kemudian restart bind9 dengan perintah ```service bind9 restart```
-- Untuk mengecek konfigurasi dapat melakukan perintah ```host -t PTR 10.151.77.106``` pada client GRESIK
+- Untuk mengecek konfigurasi dapat melakukan perintah ```host -t PTR 10.151.77.162``` pada client GRESIK
 
 ![img](https://raw.githubusercontent.com/fvldi/Jarkom_Modul2_Lapres_T14/main/img/4c.PNG)
 
@@ -150,8 +149,6 @@ naik	IN	NS	gunung
 
 ![img](https://raw.githubusercontent.com/fvldi/Jarkom_Modul2_Lapres_T14/main/img/6b.PNG)
 
-- Comment kan ```dnimgec-validation auto;``` menjadi ```//dnimgec-validation auto;```
-- Tambahkan ```allow-query{any;};```
 - Edit ```nano /etc/bind/named.conf.local```
 
 ```
@@ -173,14 +170,14 @@ zone "semerut14.pw" {
 
 ![img](https://raw.githubusercontent.com/fvldi/Jarkom_Modul2_Lapres_T14/main/img/6d.PNG)
 
-- Comment kan ```//dnimgec-validation auto;```
+- Comment kan ```//dnssec-validation auto;```
 - Tambahkan ```allow-query{any;};```
 - Edit file ```nano /etc/bind/named.conf.local```
 
 ```
 zone "semerut14.pw" {
     type slave;
-    masters { 10.151.77.163; }; // IP MALANG
+    masters { 10.151.77.162; }; // IP MALANG
     file "/var/lib/bind/gunung.semerut14.pw";
 };
 ```
